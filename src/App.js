@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Heading } from "@chakra-ui/react";
+import { SkillSearch } from "./components/skillSearch/SkillSearch";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Heading>Flair Hunt</Heading>
+      {/* <InputHints
+        placeholders={[
+          "Enter your username here...",
+          "Usernames can be 7-18 characters long.",
+        ]}
+      /> */}
+
+      <SkillSearch />
     </div>
   );
 }
