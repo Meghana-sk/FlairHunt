@@ -1,19 +1,19 @@
 import "./App.css";
 import { Heading } from "@chakra-ui/react";
+import { useSelector } from "react-redux";
 import { SkillSearch } from "./components/skillSearch/SkillSearch";
+import { ProfileCard } from "./components/profileCard/ProfileCard";
 
 function App() {
+  const { profiles } = useSelector((state) => state.profiles);
+  console.log("PROFILES", profiles);
   return (
     <div className="App">
       <Heading>Flair Hunt</Heading>
-      {/* <InputHints
-        placeholders={[
-          "Enter your username here...",
-          "Usernames can be 7-18 characters long.",
-        ]}
-      /> */}
-
       <SkillSearch />
+      {profiles.length > 0
+        ? profiles.map((profile) => <ProfileCard {...profile} />)
+        : null}
     </div>
   );
 }

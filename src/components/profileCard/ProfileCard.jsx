@@ -9,7 +9,7 @@ import {
   Link,
 } from "@chakra-ui/react";
 
-const ProfileCard = ({ profileDetails = {}, numberOfPosts, setProfile }) => {
+const ProfileCard = ({ avatar_url, login, gists }) => {
   return (
     <Box p={4}>
       <Flex
@@ -19,12 +19,12 @@ const ProfileCard = ({ profileDetails = {}, numberOfPosts, setProfile }) => {
         alignItems={"center"}
         maxW={"500px"}
       >
-        <Avatar size={"xl"} src={""}></Avatar>
+        <Avatar size={"xl"} src={avatar_url}></Avatar>
         <Heading>
           {"firstName"} {"lastName"}
         </Heading>
         <Text fontSize={`16px`} fontWeight="600">
-          @{"username"}
+          @{login}
         </Text>
 
         <Text borderRadius={"md"} placeholder="bio">
@@ -35,16 +35,16 @@ const ProfileCard = ({ profileDetails = {}, numberOfPosts, setProfile }) => {
         </Link>
         <HStack maxW={"500px"} bg="white" borderRadius="lg">
           <VStack py="2" px="4">
-            <Text fontWeight="700">{numberOfPosts}</Text>
-            <Text>Posts</Text>
+            <Text fontWeight="700">{33}</Text>
+            <Text>Repositories</Text>
           </VStack>
           <VStack py="2" px="4" cursor={"pointer"}>
-            <Text fontWeight="700">{"followers?.length"}</Text>
+            <Text fontWeight="700">{0}</Text>
+            <Text>Gists</Text>
+          </VStack>
+          <VStack py="2" px="4" cursor={"pointer"}>
+            <Text fontWeight="700">{22}</Text>
             <Text>Followers</Text>
-          </VStack>
-          <VStack py="2" px="4" cursor={"pointer"}>
-            <Text fontWeight="700">{"following?.length"}</Text>
-            <Text>Following</Text>
           </VStack>
         </HStack>
       </Flex>
